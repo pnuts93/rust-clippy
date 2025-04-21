@@ -161,61 +161,101 @@ LL |         let _ = Some(4).map_or("asd".to_string().len() as i32, f);
    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `map_or_else(|| "asd".to_string().len() as i32, f)`
 
 error: use of `unwrap_or_else` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:317:18
+=======
+  --> tests/ui/or_fun_call.rs:315:18
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         with_new.unwrap_or_else(Vec::new);
    |                  ^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: use of `unwrap_or_else` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:321:28
+=======
+  --> tests/ui/or_fun_call.rs:319:28
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         with_default_trait.unwrap_or_else(Default::default);
    |                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: use of `unwrap_or_else` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:325:27
+=======
+  --> tests/ui/or_fun_call.rs:323:27
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         with_default_type.unwrap_or_else(u64::default);
    |                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: use of `unwrap_or_else` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:329:22
+=======
+  --> tests/ui/or_fun_call.rs:327:22
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         real_default.unwrap_or_else(<FakeDefault as Default>::default);
    |                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: use of `or_insert_with` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:333:23
+=======
+  --> tests/ui/or_fun_call.rs:331:23
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         map.entry(42).or_insert_with(String::new);
    |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `or_default()`
 
 error: use of `or_insert_with` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:337:25
+=======
+  --> tests/ui/or_fun_call.rs:335:25
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         btree.entry(42).or_insert_with(String::new);
    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `or_default()`
 
 error: use of `unwrap_or_else` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:341:25
+=======
+  --> tests/ui/or_fun_call.rs:339:25
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |         let _ = stringy.unwrap_or_else(String::new);
    |                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: function call inside of `unwrap_or`
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:383:17
+=======
+  --> tests/ui/or_fun_call.rs:381:17
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |     let _ = opt.unwrap_or({ f() }); // suggest `.unwrap_or_else(f)`
    |                 ^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_else(f)`
 
 error: function call inside of `unwrap_or`
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:388:17
+=======
+  --> tests/ui/or_fun_call.rs:386:17
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |     let _ = opt.unwrap_or(f() + 1); // suggest `.unwrap_or_else(|| f() + 1)`
    |                 ^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_else(|| f() + 1)`
 
 error: function call inside of `unwrap_or`
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:393:17
+=======
+  --> tests/ui/or_fun_call.rs:391:17
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |       let _ = opt.unwrap_or({
    |  _________________^
@@ -235,19 +275,31 @@ LL ~     });
    |
 
 error: function call inside of `map_or`
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:399:17
+=======
+  --> tests/ui/or_fun_call.rs:397:17
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |     let _ = opt.map_or(f() + 1, |v| v); // suggest `.map_or_else(|| f() + 1, |v| v)`
    |                 ^^^^^^^^^^^^^^^^^^^^^^ help: try: `map_or_else(|| f() + 1, |v| v)`
 
 error: use of `unwrap_or` to construct default value
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:404:17
+=======
+  --> tests/ui/or_fun_call.rs:402:17
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |     let _ = opt.unwrap_or({ i32::default() });
    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_default()`
 
 error: function call inside of `unwrap_or`
+<<<<<<< HEAD
   --> tests/ui/or_fun_call.rs:411:21
+=======
+  --> tests/ui/or_fun_call.rs:409:21
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
    |
 LL |     let _ = opt_foo.unwrap_or(Foo { val: String::default() });
    |                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ help: try: `unwrap_or_else(|| Foo { val: String::default() })`

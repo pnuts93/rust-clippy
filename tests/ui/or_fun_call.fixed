@@ -5,7 +5,11 @@
     clippy::uninlined_format_args,
     clippy::unnecessary_wraps,
     clippy::unnecessary_literal_unwrap,
+<<<<<<< HEAD
     clippy::unnecessary_result_map_or_else,
+=======
+    clippy::unnecessary_option_map_or_else,
+>>>>>>> 0c250c96f (Add lint unnecessary_option_map_or_else)
     clippy::useless_vec
 )]
 
